@@ -1,11 +1,16 @@
 package com.waindesk.successshots;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 
+import androidx.fragment.app.Fragment;
+
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -37,6 +42,16 @@ public class TabbedActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                FragmentManager fragmentManager = getSupportFragmentManager();
+//                FragmentTransaction transaction = fragmentManager.beginTransaction();
+//                Fragment fragment = new Fragment();
+//                transaction.replace(R.id.frameView, fragment);
+//                transaction.commit();
+//                binding.frameView.setVisibility(View.GONE);
+//                binding.uplodView.setVisibility((View.VISIBLE));
+//                tabs.setVisibility(View.GONE);
+                Intent intent = new Intent(getApplicationContext(), UploadViewActivity.class);
+                startActivity(intent);
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
